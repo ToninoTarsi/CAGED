@@ -30,6 +30,10 @@
     height: 18px;
 }
 
+.secondary {
+    font-size: 0.6em;
+}
+
 .scales {
     display: flex;
     justify-content: center;

@@ -1,4 +1,5 @@
 scale = "Minor Pentatonic";
+old_scale = "Minor Pentatonic";
 pos = "1";
 timer = false;
 
@@ -10,19 +11,45 @@ function resetTimer() {
 }
 
 function showscale(s) {
+
+
+    if (s == scale) {
+        scale = old_scale;
+        update(old_scale, pos);
+        return;
+    }
+    old_scale = scale;
     scale = s;
-    update(pos);
+
+    update(scale, pos);
+
+
 }
 
-function update(n) {
+function update(thescale, n) {
 
-    im = "./images/" + scale + " - " + n + " - [Made at Guitarscientist.com].png";
+
+    im = "./images/" + thescale + " - " + pos + " - [Made at Guitarscientist.com].png";
     $('#fretboard').attr('src', im);
+
+    $('#-1').removeClass('selected');
+    $('#0').removeClass('selected');
     $('#1').removeClass('selected');
     $('#2').removeClass('selected');
     $('#3').removeClass('selected');
     $('#4').removeClass('selected');
     $('#5').removeClass('selected');
+    $('#6').removeClass('selected');
+    $('#7').removeClass('selected');
+
+    if (n == -1) {
+        // $('#1').removeClass('default');
+        $('#-1').addClass('selected');
+    }
+    if (n == 0) {
+        // $('#1').removeClass('default');
+        $('#0').addClass('selected');
+    }
     if (n == 1) {
         // $('#1').removeClass('default');
         $('#1').addClass('selected');
@@ -46,7 +73,15 @@ function update(n) {
         // $('#5').removeClass('default');
         $('#5').addClass('selected');
     }
+    if (n == 6) {
+        // $('#4').removeClass('default');
+        $('#6').addClass('selected');
+    }
 
+    if (n == 7) {
+        // $('#5').removeClass('default');
+        $('#7').addClass('selected');
+    }
 
     $('#Minor_Pentatonic').removeClass('selected');
     $('#Major_Pentatonic').removeClass('selected');
@@ -65,52 +100,56 @@ function update(n) {
     $('#Diminished7').removeClass('selected');
 
 
-    if (scale == "Minor Pentatonic") {
+    if (thescale == "Minor Pentatonic") {
         $('#Minor_Pentatonic').addClass('selected');
     }
-    if (scale == "Major Pentatonic") {
+    if (thescale == "Major Pentatonic") {
         $('#Major_Pentatonic').addClass('selected');
     }
-    if (scale == "Blues") {
+    if (thescale == "Blues") {
         $('#Blues').addClass('selected');
     }
-    if (scale == "Major") {
+    if (thescale == "Major") {
         $('#Major').addClass('selected');
     }
-    if (scale == "Minor") {
+    if (thescale == "Minor") {
         $('#Minor').addClass('selected');
     }
 
-    if (scale == "Lydian") {
+    if (thescale == "Lydian") {
         $('#Lydian').addClass('selected');
     }
-    if (scale == "Dorian") {
+    if (thescale == "Dorian") {
         $('#Dorian').addClass('selected');
     }
-    if (scale == "Phrygian") {
+    if (thescale == "Phrygian") {
         $('#Phrygian').addClass('selected');
     }
-    if (scale == "Mixolydian") {
+    if (thescale == "Mixolydian") {
         $('#Mixolydian').addClass('selected');
     }
 
-    if (scale == "Major7") {
+    if (thescale == "Major7") {
         $('#Major7').addClass('selected');
     }
-    if (scale == "Minor7") {
+    if (thescale == "Minor7") {
         $('#Minor7').addClass('selected');
     }
-    if (scale == "Dominant7") {
+    if (thescale == "Dominant7") {
         $('#Dominant7').addClass('selected');
     }
-    if (scale == "Diminished7") {
+    if (thescale == "Diminished7") {
         $('#Diminished7').addClass('selected');
     }
+
 
 }
 
 function show(n) {
 
-    update(n);
+    if (n < 1) pos = 5 + n;
+    else if (n > 5) pos = n - 5;
+    else pos = n;
+    update(scale, n);
 
 }
