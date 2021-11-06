@@ -23,11 +23,26 @@
         <button id="Minor_Pentatonic" class="selected" onclick="showscale('Minor Pentatonic')">Minor Pentatonic</button>
         <button id="Major_Pentatonic" class="" onclick="showscale('Major Pentatonic')">Major Pentatonic</button>
         <button id="Blues" class="" onclick="showscale('Blues')">Blues</button>
-        <button id="Major" class="" onclick="showscale('Major')">Major</button>
-        <button id="Minor" class="" onclick="showscale('Minor')">Minor</button>
+
+        <button id="Major" class="" onclick="showscale('Major')">Ionian</button>
+        <button id="Dorian" class="" onclick="showscale('Dorian')">Dorian</button>
+        <button id="Phrygian" class="" onclick="showscale('Phrygian')">Phrygian</button>
+        <button id="Lydian" class="" onclick="showscale('Lydian')">Lydian</button>
+        <button id="Mixolydian" class="" onclick="showscale('Mixolydian')">Mixolydian</button>
+        <button id="Minor" class="" onclick="showscale('Minor')">Aeolian</button>
+
 
     </div>
 
+    <div class="scales">
+        <button id="Major7" class="" onclick="showscale('Major7')">Major7</button>
+        <button id="Minor7" class="" onclick="showscale('Minor7')">Minor7</button>
+        <button id="Dominant7" class="" onclick="showscale('Dominant7')">Dominant7</button>
+        <button id="Diminished7" class="" onclick="showscale('Diminished7')">Diminished7</button>
+
+
+
+    </div>
 
 
     <div class="crop">
@@ -36,11 +51,11 @@
 
 
     <div class="control">
-        <button id="1" class="position_select selected" onmouseover="show(1)"> Pos 1</button>
-        <button id="2" class="position_select" onmouseover="show(2)"> Pos 2</button>
-        <button id="3" class="position_select" onmouseover="show(3)"> Pos 3</button>
-        <button id="4" class="position_select" onmouseover="show(4)"> Pos 4</button>
-        <button id="5" class="position_select" onmouseover="show(5)"> Pos 5</button>
+        <button id="1" class="position_select selected" onmouseover="show(1)" onclick="pos=1;show(1)"> Pos 1</button>
+        <button id="2" class="position_select" onmouseover="pos=2;show(2)"> Pos 2</button>
+        <button id="3" class="position_select" onmouseover="pos=3;show(3)"> Pos 3</button>
+        <button id="4" class="position_select" onmouseover="pos=4;show(4)"> Pos 4</button>
+        <button id="5" class="position_select" onmouseover="pos=5;show(5)"> Pos 5</button>
     </div>
 </body>
 

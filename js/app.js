@@ -2,10 +2,7 @@ scale = "Minor Pentatonic";
 pos = "1";
 timer = false;
 
-$(".position_select").click(function() {
-    timer = true;
-    setTimeout(resetTimer, 5000)
-});
+
 
 
 function resetTimer() {
@@ -14,40 +11,38 @@ function resetTimer() {
 
 function showscale(s) {
     scale = s;
-
-    update();
-
+    update(pos);
 }
 
-function update() {
+function update(n) {
 
-    im = "./images/" + scale + " - " + pos + " - [Made at Guitarscientist.com].png";
+    im = "./images/" + scale + " - " + n + " - [Made at Guitarscientist.com].png";
     $('#fretboard').attr('src', im);
     $('#1').removeClass('selected');
     $('#2').removeClass('selected');
     $('#3').removeClass('selected');
     $('#4').removeClass('selected');
     $('#5').removeClass('selected');
-    if (pos == 1) {
+    if (n == 1) {
         // $('#1').removeClass('default');
         $('#1').addClass('selected');
     }
-    if (pos == 2) {
+    if (n == 2) {
         // $('#2').removeClass('default');
         $('#2').addClass('selected');
     }
 
-    if (pos == 3) {
+    if (n == 3) {
         // $('#3').removeClass('default');
         $('#3').addClass('selected');
     }
 
-    if (pos == 4) {
+    if (n == 4) {
         // $('#4').removeClass('default');
         $('#4').addClass('selected');
     }
 
-    if (pos == 5) {
+    if (n == 5) {
         // $('#5').removeClass('default');
         $('#5').addClass('selected');
     }
@@ -58,6 +53,16 @@ function update() {
     $('#Blues').removeClass('selected');
     $('#Major').removeClass('selected');
     $('#Minor').removeClass('selected');
+
+    $('#Lydian').removeClass('selected');
+    $('#Dorian').removeClass('selected');
+    $('#Phrygian').removeClass('selected');
+    $('#Mixolydian').removeClass('selected');
+
+    $('#Major7').removeClass('selected');
+    $('#Minor7').removeClass('selected');
+    $('#Dominant7').removeClass('selected');
+    $('#Diminished7').removeClass('selected');
 
 
     if (scale == "Minor Pentatonic") {
@@ -76,17 +81,36 @@ function update() {
         $('#Minor').addClass('selected');
     }
 
+    if (scale == "Lydian") {
+        $('#Lydian').addClass('selected');
+    }
+    if (scale == "Dorian") {
+        $('#Dorian').addClass('selected');
+    }
+    if (scale == "Phrygian") {
+        $('#Phrygian').addClass('selected');
+    }
+    if (scale == "Mixolydian") {
+        $('#Mixolydian').addClass('selected');
+    }
+
+    if (scale == "Major7") {
+        $('#Major7').addClass('selected');
+    }
+    if (scale == "Minor7") {
+        $('#Minor7').addClass('selected');
+    }
+    if (scale == "Dominant7") {
+        $('#Dominant7').addClass('selected');
+    }
+    if (scale == "Diminished7") {
+        $('#Diminished7').addClass('selected');
+    }
+
 }
 
 function show(n) {
-    if (!timer) {
-        pos = n;
 
-        update();
-    }
-
-
-
-
+    update(n);
 
 }
