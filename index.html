@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TT SCales</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="./styles/style.css">
+
+</head>
+
+<script>
+</script>
+
+<body>
+
+    <div class="scales">
+        <button id="Minor_Pentatonic" class="selected" onclick="showscale('Minor Pentatonic')">Minor Pentatonic</button>
+        <button id="Major_Pentatonic" class="" onclick="showscale('Major Pentatonic')">Major Pentatonic</button>
+        <button id="Blues" class="" onclick="showscale('Blues')">Blues</button>
+        <button id="Major" class="" onclick="showscale('Major')">Major</button>
+        <button id="Minor" class="" onclick="showscale('Minor')">Minor</button>
+
+    </div>
+
+
+
+    <div class="crop">
+        <img id="fretboard" title="Hello" src="./images/Minor Pentatonic - 1 - [Made at Guitarscientist.com].png" />
+    </div>
+
+
+    <div class="control">
+        <button id="1" class="position_select selected" onmouseover="show(1)"> Pos 1</button>
+        <button id="2" class="position_select" onmouseover="show(2)"> Pos 2</button>
+        <button id="3" class="position_select" onmouseover="show(3)"> Pos 3</button>
+        <button id="4" class="position_select" onmouseover="show(4)"> Pos 4</button>
+        <button id="5" class="position_select" onmouseover="show(5)"> Pos 5</button>
+    </div>
+</body>
+
+<script src="./js/app.js"></script>
+
+</html>
