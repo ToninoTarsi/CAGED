@@ -99,6 +99,9 @@ function update(thescale, n) {
     $('#Dominant7').removeClass('selected');
     $('#Diminished7').removeClass('selected');
 
+    $('#HW').removeClass('selected');
+    $('#Altered').removeClass('selected');
+
 
     if (thescale == "Minor Pentatonic") {
         $('#Minor_Pentatonic').addClass('selected');
@@ -142,7 +145,13 @@ function update(thescale, n) {
         $('#Diminished7').addClass('selected');
     }
 
+    if (thescale == "HW") {
+        $('#HW').addClass('selected');
+    }
 
+    if (thescale == "Altered") {
+        $('#Altered').addClass('selected');
+    }
 }
 
 function show(n) {
