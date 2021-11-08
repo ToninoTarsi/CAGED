@@ -102,6 +102,16 @@ function update(thescale, n) {
     $('#HW').removeClass('selected');
     $('#Altered').removeClass('selected');
 
+    $('#Harmonic_Minor').removeClass('selected');
+    $('#Melodic_Minor').removeClass('selected');
+
+    if (thescale == "Harmonic Minor") {
+        $('#Harmonic_Minor').addClass('selected');
+    }
+    if (thescale == "Melodic Minor") {
+        $('#Melodic_Minor').addClass('selected');
+    }
+
 
     if (thescale == "Minor Pentatonic") {
         $('#Minor_Pentatonic').addClass('selected');
